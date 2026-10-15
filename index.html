@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ARD Clinic — центр флебологии и лимфологии</title>
+<meta name="description" content="Центр флебологии и лимфологии: диагностика и лечение варикоза, склеротерапия, лазерная коагуляция вен, лимфостаз. Новости и статьи о здоровье вен.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#10263a; --muted:#5b6f80; --bg:#f6fafb; --card:#fff;
+  --teal:#0e8a8a; --teal-d:#0a6b6d; --navy:#0b2a45; --coral:#ef6f5e; --mint:#dff3f1;
+  --line:#dbe7ea; --radius:20px; --shadow:0 12px 40px -16px rgba(11,42,69,.25);
+}
+@media (prefers-color-scheme:dark){
+  :root{--ink:#e8f1f4;--muted:#9fb3c0;--bg:#0a1822;--card:#102532;--mint:#12363a;--line:#1d3647;--navy:#06121b}
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Manrope,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:'Playfair Display',Georgia,serif;line-height:1.15}
+h2{font-size:clamp(28px,4vw,40px);margin-bottom:12px}
+.lead{color:var(--muted);max-width:620px}
+section{padding:80px 0}
+.btn{display:inline-block;padding:14px 28px;border-radius:999px;font-weight:700;border:0;cursor:pointer;font:inherit;font-weight:700;transition:.2s}
+.btn-primary{background:var(--coral);color:#fff;box-shadow:0 10px 24px -10px var(--coral)}
+.btn-primary:hover{transform:translateY(-2px)}
+.btn-ghost{border:2px solid currentColor;color:#fff}
+.btn-ghost:hover{background:rgba(255,255,255,.12)}
+
+/* ticker */
+.ticker{background:var(--navy);color:#fff;font-size:14px;display:flex;align-items:center;overflow:hidden;position:relative;z-index:30}
+.ticker-label{flex:none;background:var(--coral);padding:10px 18px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;font-size:12px;display:flex;align-items:center;gap:8px}
+.ticker-label i{width:8px;height:8px;border-radius:50%;background:#fff;animation:pulse 1.4s infinite}
+@keyframes pulse{50%{opacity:.2}}
+.ticker-track{overflow:hidden;flex:1}
+.ticker-move{display:inline-flex;white-space:nowrap;animation:scroll 70s linear infinite;padding-left:24px}
+.ticker:hover .ticker-move{animation-play-state:paused}
+.ticker-move a{padding:10px 34px 10px 0;opacity:.92}
+.ticker-move a b{color:#7fe0d6;margin-right:8px}
+.ticker-move a:hover{text-decoration:underline}
+@keyframes scroll{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.ticker-move{animation:none;overflow-x:auto}}
+
+/* header */
+header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{display:flex;align-items:center;gap:10px;font-family:'Playfair Display',serif;font-weight:700;font-size:24px}
+.logo img{height:46px;width:auto;background:#fff;border-radius:12px;padding:3px 8px}
+nav ul{display:flex;gap:28px;list-style:none;font-weight:500;font-size:15px}
+nav a:hover{color:var(--teal)}
+.phone{font-weight:800}
+.burger{display:none;background:none;border:0;font-size:28px;color:var(--ink);cursor:pointer}
+@media(max-width:900px){
+  nav{position:absolute;top:72px;left:0;right:0;background:var(--card);border-bottom:1px solid var(--line);display:none;padding:12px 20px}
+  nav.open{display:block}
+  nav ul{flex-direction:column;gap:14px;padding:10px 0}
+  .burger{display:block}.phone{display:none}
+}
+
+/* hero */
+.hero{background:radial-gradient(1200px 500px at 85% -10%,#18b0a5 0%,transparent 60%),linear-gradient(135deg,#0b2a45,#0e5b6a);color:#fff;padding:90px 0 120px;position:relative;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}
+.hero h1{font-size:clamp(36px,5.5vw,64px);margin-bottom:20px}
+.hero h1 em{font-style:italic;color:#7fe0d6}
+.hero p{font-size:18px;opacity:.88;max-width:520px;margin-bottom:32px}
+.hero .cta{display:flex;gap:14px;flex-wrap:wrap}
+.hero-art{position:relative;aspect-ratio:1;max-width:420px;justify-self:center;width:100%}
+.hero-art svg{width:100%;height:100%}
+.stats{display:flex;gap:36px;margin-top:44px;flex-wrap:wrap}
+.stats b{font-size:34px;font-family:'Playfair Display',serif;display:block;color:#7fe0d6}
+.stats span{font-size:13px;opacity:.75}
+@media(max-width:800px){.hero .wrap{grid-template-columns:1fr}.hero-art{max-width:260px;order:-1}}
+
+/* quick */
+.quick{margin-top:-60px;position:relative;z-index:5;padding:0}
+.quick-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.quick a{background:var(--card);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow);border:1px solid var(--line);transition:.2s}
+.quick a:hover{transform:translateY(-4px);border-color:var(--teal)}
+.quick .ic{font-size:28px}
+.quick h3{font-size:18px;margin:8px 0 4px;font-family:Manrope;font-weight:800}
+.quick p{font-size:14px;color:var(--muted)}
+@media(max-width:900px){.quick-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.quick-grid{grid-template-columns:1fr}}
+
+/* news */
+.news-head{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:32px}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{padding:8px 16px;border-radius:999px;border:1px solid var(--line);background:var(--card);cursor:pointer;font:inherit;font-size:14px;color:var(--ink)}
+.chip.on{background:var(--teal);color:#fff;border-color:var(--teal)}
+.news-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{background:var(--card);border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);display:flex;flex-direction:column;transition:.2s}
+.card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.card .pic{height:150px;display:grid;place-items:center;font-size:54px}
+.card .body{padding:20px;display:flex;flex-direction:column;gap:8px;flex:1}
+.tag{font-size:12px;font-weight:800;color:var(--teal);text-transform:uppercase;letter-spacing:.06em}
+.card h3{font-size:20px}
+.card p{font-size:14px;color:var(--muted);flex:1}
+.date{font-size:12px;color:var(--muted)}
+.card.big{grid-column:span 2;flex-direction:row}
+.card.big .pic{width:42%;height:auto;font-size:90px}
+@media(max-width:900px){.news-grid{grid-template-columns:1fr 1fr}.card.big{grid-column:span 2}}
+@media(max-width:600px){.news-grid{grid-template-columns:1fr}.card.big{grid-column:auto;flex-direction:column}.card.big .pic{width:auto;height:150px}}
+
+/* services */
+.services{background:var(--mint)}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:36px}
+.svc{background:var(--card);border-radius:var(--radius);padding:28px;border:1px solid var(--line)}
+.svc .n{font-family:'Playfair Display';font-size:40px;color:var(--teal);opacity:.5}
+.svc h3{font-size:20px;margin:6px 0 8px;font-family:Manrope;font-weight:800}
+.svc p{font-size:14px;color:var(--muted)}
+@media(max-width:900px){.svc-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.svc-grid{grid-template-columns:1fr}}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:36px;counter-reset:s}
+.step{position:relative;padding-top:56px}
+.step::before{counter-increment:s;content:counter(s);position:absolute;top:0;left:0;width:44px;height:44px;border-radius:50%;background:var(--teal);color:#fff;display:grid;place-items:center;font-weight:800}
+.step h3{font-family:Manrope;font-weight:800;font-size:18px;margin-bottom:6px}
+.step p{font-size:14px;color:var(--muted)}
+@media(max-width:800px){.steps{grid-template-columns:1fr 1fr}}
+
+/* doctors */
+.docs{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:36px}
+.doc{text-align:center}
+.avatar{width:100%;aspect-ratio:1;border-radius:var(--radius);display:grid;place-items:center;font-size:56px;margin-bottom:12px;background:linear-gradient(135deg,var(--mint),#b8e6e1)}
+.doc h3{font-family:Manrope;font-weight:800;font-size:17px}
+.doc p{font-size:13px;color:var(--muted)}
+@media(max-width:800px){.docs{grid-template-columns:1fr 1fr}}
+
+/* form */
+.book{background:linear-gradient(135deg,#0b2a45,#0e5b6a);color:#fff;border-radius:28px;padding:48px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+form{display:grid;gap:12px}
+input,select{padding:15px 18px;border-radius:14px;border:0;font:inherit;width:100%}
+.note{font-size:12px;opacity:.7}
+.ok{display:none;background:#7fe0d6;color:#06323a;padding:14px;border-radius:14px;font-weight:700}
+@media(max-width:800px){.book{grid-template-columns:1fr;padding:28px}}
+
+footer{background:var(--navy);color:#cfe0e8;padding:50px 0 30px;margin-top:80px;font-size:14px}
+.fgrid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:30px}
+footer h4{color:#fff;margin-bottom:10px}
+footer li{list-style:none;margin-bottom:6px}
+.disc{border-top:1px solid #1d3d55;margin-top:30px;padding-top:20px;font-size:12px;opacity:.7}
+@media(max-width:700px){.fgrid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div class="ticker" aria-label="Новости флебологии">
+  <div class="ticker-label"><i></i>Новости</div>
+  <div class="ticker-track"><div class="ticker-move" id="tickerMove"></div></div>
+</div>
+
+<header>
+  <div class="wrap nav">
+    <a href="#top" class="logo" aria-label="ARD Clinic"><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTEwIiBoZWlnaHQ9IjU0IiB2aWV3Qm94PSIwIDAgMTEwIDU0IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTcyLjIzNDEgMzIuMzQ1NUM3Mi4yOTMxIDMxLjgwNzMgNzIuNDUyNCAzMS4xNjg3IDcyLjU1MzEgMzAuNjM2OEw3NS40NzA5IDE1LjQxMzZDNzUuNjM4NyAxNC41NjA0IDc1Ljg4MDUgMTIuNzYyNyA3Ni4yMjcxIDEyLjEzNzJDNzcuNzMyIDkuNDIwMjYgODIuNzIzMSA5LjI2NTg2IDg1LjA0MTIgMTAuNzk2NUM4Ni4wMjQ0IDExLjQ0NTYgODYuNDE2NSAxMi4wNzYgODYuNjM2MSAxMy4yMzQ0Qzg3LjA2NjQgMTUuNTA0MyA4Ny40OTkyIDE3LjczNDkgODcuOTMyMyAxOS45OTg5TDg5LjI1IDI2LjczOTFDODkuNjEyOCAyOC41OTU2IDkyLjUxODUgMjguMjM2NSA5Mi4wODQ4IDI2LjA3MDVMODkuNzk1MyAxNC4yOTM1Qzg5LjU1MDkgMTMuMDM4IDg5LjQzMDUgMTIuMTcyNSA4OC44NjAxIDExLjE4OEM4NS42MjgxIDUuNjA5ODYgNzQuOTczMiA2LjUyMDY2IDczLjE3NCAxMi4xNDU5QzczLjAxNzcgMTIuNjM0NCA3Mi42MTkxIDE0Ljg1MDMgNzIuNDk4OCAxNS40OTYzQzcyLjI4OTkgMTYuNjE4NSA3Mi4wNjc2IDE3LjcyNzYgNzEuODU1NiAxOC44NTUzQzcxLjgzMzMgMTguOTc0NCA2OS4zMzk2IDMyLjE3MjkgNjkuMjU1MyAzMi4zMzZDNjguMDM5MiAzMi40NTkxIDY1LjY3NjkgMzIuMTI4NyA2NC45NzMyIDMyLjU1NzZDNjMuODkgMzMuMjE3NyA2NC4xNTA5IDM0Ljk2MjkgNjUuNDQ0NSAzNS4yMTA3QzY2LjEyMTEgMzUuMzQwMSA2Ni45MjQgMzUuMjk3MSA2Ny42MzU3IDM1LjI5NzFDNzcuMzQzNSAzNS4yOTcxIDg3LjA5MTUgMzUuMzM1MiA5Ni43ODg0IDM1LjI5NzFDOTcuNTY3NyAzNS4yOTQgOTguMTAyMyAzNS4xMDQ4IDk4LjQ0MzIgMzQuNjc5MkM5OC44MzEzIDM0LjE5NDkgOTguODUyIDMzLjQ4MjEgOTguNTAwMyAzMi45NjhDOTguMTQzMSAzMi40NDU5IDk3LjcwODQgMzIuMzQyNyA5Ni44NjAxIDMyLjM0MjhDOTYuMTE2OSAzMi4zNDI5IDk1LjM3MTcgMzIuMzM3NSA5NC42Mjg4IDMyLjM0NDhDOTMuMTQzOSAzMi4zNTk2IDkxLjY1MTYgMzIuMzQ1OSA5MC4xNjU5IDMyLjM0NTlDODcuMTc4NyAzMi4zNDU5IDg0LjE5MTUgMzIuMzQ1OSA4MS4yMDQzIDMyLjM0NTlDNzguMjE5NiAzMi4zNDU5IDc1LjIxNjMgMzIuMzc5MiA3Mi4yMzQxIDMyLjM0NTVaIiBmaWxsPSIjMDA4REE4IiBzdHJva2U9IiMwMDhEQTgiIHN0cm9rZS13aWR0aD0iMC43NTU4NjciLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0zOS43NTQgMzIuMzI3MUMzOS43MTQ4IDMyLjEwNDQgMzkuNzQ2IDI2Ljc0NTcgMzkuNzQ2IDI2LjM2NjFDMzkuNzQ2IDI0Ljc3NTEgMzkuODAxNyAyMS45MDc5IDM5LjcyMzEgMjAuNDYyOUMzOS41NjY1IDE3LjU4NTIgMzguNTQyNSAxNS4wMjMyIDM2Ljg5MDQgMTIuODQzMUwzNi4yMzI0IDEyLjAyNTFDMzUuOTYzOSAxMS43NDI5IDM1Ljc2MTYgMTEuNTA5MyAzNS40OTAzIDExLjI1NTlMMzQuMjc2OCAxMC4yMzc1QzM0LjEzMTIgMTAuMTQxNyAzMy45ODcyIDEwLjAzMDQgMzMuODQwOCA5LjkxNjUzQzMzLjEyIDkuMzU2IDMxLjgzMzMgOC43MDY0IDMwLjk0MzUgOC4zNTA4QzI2Ljg5NjUgNi43MzM4NyAyMi4zMDkyIDcuMjk2OTMgMTguOTQ1NSA5LjI3NDhDMTguMzIxOSA5LjY0MTQ3IDE3LjcyMDkgMTAuMDQwMyAxNy4xNzAxIDEwLjQ4NzZDMTYuMDU5MiAxMS4zOSAxNS4xMzg5IDEyLjQ0MjUgMTQuMzMyNSAxMy42MjM5QzEyLjA2OTIgMTYuOTQgMTEuNDEwMSAyMS40NzA4IDEyLjY5MTIgMjUuNDg2OUMxNC4xMDY0IDI5LjkyMzIgMTcuNTAxMyAzMy4wNzE5IDIxLjU4NDQgMzQuNDQ3M0MyNC4xNDk5IDM1LjMxMTUgMjcuMDUyNyAzNS4xMzI5IDI5LjgwOTYgMzUuMTMyOUMzMC43OTEyIDM1LjEzMjkgMzEuNzk1MiAzNS4yNjk3IDMyLjI5OTcgMzQuNjUyQzMyLjg0MDcgMzMuOTkgMzIuNzQzNyAzMi45OTkxIDMyLjEyMDggMzIuNTQ4M0MzMS43MzE3IDMyLjI2NjggMzEuNTUyMyAzMi4yMjQgMzAuOTYxMyAzMi4yMjQ3QzI4Ljg1NzkgMzIuMjI3MiAyNS41NTAxIDMyLjM1NDMgMjMuNzY4IDMyLjAwOTFDMjEuMTk1MSAzMS41MTA3IDE4Ljg1MjkgMjkuOTc1NiAxNy4zMTMzIDI4LjAyOTJDMTYuMjE1NyAyNi42NDE3IDE1LjM1NjkgMjQuODM0NCAxNS4wNjg5IDIyLjg2NjVDMTQuMzIgMTcuNzQ5MiAxNy4wOTM3IDEzLjM4NCAyMS4xODkxIDExLjM3NTdDMjQuMjc2NyA5Ljg2MTYgMjcuNzU4OSAxMC4wMDg1IDMwLjgzMTMgMTEuNDg4QzMyLjczMzYgMTIuNDA0IDM0LjQ0MjUgMTQuMTA5MyAzNS40MDMyIDE1Ljg0MTNDMzYuODg0OCAxOC41MTI4IDM2LjgzNzkgMjAuMjYyMyAzNi44Mzc5IDIzLjM0MjhWMzIuMjY4OEMzNi44Mzc5IDMzLjIyODQgMzYuODA3NyAzNC4yNTg3IDM2Ljg0MDUgMzUuMjA5OUMzNy40OTY1IDM1LjI5MDQgMzguNTQzOSAzNS4yMzQ0IDM5LjIzOTEgMzUuMjM0NEM0MC4xMDA4IDM1LjIzNDQgNDAuNjk5NyAzNS4yOTYxIDQxLjE5NzIgMzQuODAyN0M0MS41ODkzIDM0LjQxMzcgNDEuNzcxOSAzMy42NTk5IDQxLjQxNDggMzMuMDQ0OUM0MS4wMTEyIDMyLjM0OTkgNDAuNDEwOSAzMi4zMyAzOS43NTQgMzIuMzI3MVoiIGZpbGw9IiMwMDhEQTgiIHN0cm9rZT0iIzAwOERBOCIgc3Ryb2tlLXdpZHRoPSIwLjc1NTg2NyIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTQ3LjM0ODMgMTAuNDI0OEM0Ny42NTYgMTAuMzc1MyA1Ni44Mzc3IDEwLjQxMDIgNTcuMTI2NSAxMC40MTAyQzU4Ljc1NTYgMTAuNDA5OCA1OS44OTUzIDEwLjY4NiA2MS4xMjY1IDExLjMxN0M2Mi4xNDggMTEuODQwNiA2My4xMDg0IDEyLjc0MDkgNjMuNjcyOSAxMy42NjQ4QzY0LjMyMTcgMTQuNzI2NCA2NC42NjIxIDE2LjEzNzggNjQuMzI0NyAxNy42MTkyQzY0LjAxODkgMTguOTYxMiA2My4xOTU1IDE5Ljk4NjkgNjIuNDUyOCAyMC42NDI5QzYxLjY1NjcgMjEuMzQ2NCA2MC41MjI0IDIxLjk1NjkgNTkuMTc2MSAyMi4yNjIxQzU3LjgyNzcgMjIuNTY3OCA1NS45MjQzIDIyLjQ1NSA1NC40NjMyIDIyLjQ1NDRDNTMuNTMwMyAyMi40NTM4IDUzLjA2NDggMjIuNDc2OSA1Mi42MTc5IDIzLjA0NTNDNTIuMTc4NCAyMy42MDQ0IDUyLjIzNTIgMjQuMzA3MiA1Mi42NDk2IDI0LjgzMTZDNTMuMTAwNSAyNS40MDIgNTMuNjU0OCAyNS4zNjUyIDU0LjU3MTIgMjUuMzY1MkM1Ny4wMDg3IDI1LjM2NTIgNTkuMDA2NyAyNS40ODkzIDYxLjM1NDMgMjQuNzk5OEM2My4xNTYxIDI0LjI3MDYgNjQuNjU4OCAyMy4zNTM2IDY1Ljg4MjkgMjEuOTg2QzY3LjE1NDQgMjAuNTY1NiA2Ny44NDQ0IDE4LjcwMTIgNjcuODcwOSAxNi42MTI0QzY3Ljk0MDEgMTEuMTcyMiA2Mi44MTE5IDcuNTIwOTEgNTcuNDE0NCA3LjQ5OTcxQzU0LjE1MjMgNy40ODY3OCA1MC44ODczIDcuNDk5NDUgNDcuNjI0OSA3LjQ5OTQ1QzQ2LjkwOTEgNy40OTk0NSA0NS45MzQ3IDcuNDAzNTggNDUuMzUwNCA3LjY3OTU4QzQ0LjY3MDkgOC4wMDA1MSA0NC40NjYzIDguNDkxNDUgNDQuNDY2OCA5LjIzMzg1QzQ0LjQ2OTYgMTQuMTA2OSA0NC40MDI5IDE4Ljk3MzggNDQuMzk0NSAyMy44NDY4QzQ0LjM4ODggMjcuMTAxNCA0NC40NDQ1IDMwLjM1MTYgNDQuNDM4IDMzLjYwMDhDNDQuNDM2MyAzNC40MDI0IDQ0Ljc2MjQgMzQuODk1NyA0NS4zNDA4IDM1LjEyODlDNDYuMTE0NyAzNS40NDEyIDQ2LjgwMTMgMzUuMDQ2OSA0Ny4wODY5IDM0LjYwOTdDNDcuNDY2MyAzNC4wMjkgNDcuMzQ1NiAzMy4xODc2IDQ3LjM0NTYgMzIuNDEyOFYxNS4yODA4QzQ3LjM0NTYgMTMuNjg4OSA0Ny4yOTI1IDEyLjAwNSA0Ny4zNDgzIDEwLjQyNDhaIiBmaWxsPSIjMDA4REE4IiBzdHJva2U9IiMwMDhEQTgiIHN0cm9rZS13aWR0aD0iMC43NTU4NjciLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik01NS4wMjUxIDQ4LjI1NzdDNTUuMDQ5MSA0OC42NDU1IDU0LjkzMDkgNDkuMTg4MyA1NS4yNTE1IDQ5LjI5ODNDNTUuNzc1OSA0OS40NzgxIDU1LjcxOTMgNDguNzU2OSA1NS43MTg5IDQ4LjYwODlWNDMuNzE0MUM1NS43MTg5IDQzLjQxNzcgNTUuNzk2NSA0Mi43OTggNTUuNjE3NiA0Mi41OTUyQzU1LjUyNTYgNDIuNDkwOSA1NS4zMTExIDQyLjQ1MDcgNTUuMTcxOSA0Mi41NTA0QzU1LjA1MDkgNDIuNjM2OCA1NS4wMjkzIDQyLjgzMDUgNTUuMDI5NyA0My4wMjk1QzU1LjAzMTIgNDMuODQ1NSA1NS4wMzA4IDQ0LjY2MTYgNTUuMDMwOCA0NS40Nzc2QzU1LjAzMDggNDYuMzY2OCA1NS4wNzExIDQ2Ljg0MTkgNTQuNjQ5MyA0Ny41MzYzQzUzLjU4NjMgNDkuMjg2OCA1MC43NzE3IDQ4LjcyNDMgNTAuNzU5NSA0Ni4wNTM5QzUwLjc1NTkgNDUuMjM4MyA1MC43NTk1IDQ0LjQyMTcgNTAuNzU5NSA0My42MDYxQzUwLjc1OTUgNDMuMjgwOCA1MC44NTI5IDQyLjY5MTkgNTAuNTk3MyA0Mi41MzkyQzUwLjQzNjUgNDIuNDQyOSA1MC4yMzkyIDQyLjUwNDcgNTAuMTU4MSA0Mi42MTIxQzUwLjA1NzMgNDIuNzQ2IDUwLjA2OTMgNDIuOTQ3MyA1MC4wNzAzIDQzLjEzODFDNTAuMDc0IDQzLjk1MzYgNTAuMDcwNSA0NC43NyA1MC4wNzA1IDQ1LjU4NTZDNTAuMDcwNSA0Ni40MjM3IDUwLjA3NTYgNDcuMDA4MyA1MC40MTggNDcuNjg3NkM1MS4wMTIxIDQ4Ljg2NiA1Mi4yNjI3IDQ5LjYxNDQgNTMuNTY0OSA0OS4yMjMyQzU0LjQ0ODggNDguOTU3NiA1NC42OTI5IDQ4LjQ5MjMgNTUuMDI1MSA0OC4yNTc3WiIgZmlsbD0iIzFBMUExQSIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTY4Ljc0MzkgNDguMjYxMkM2OC44MDIzIDQ4LjYxNTEgNjguNjM5MSA0OS4xNTIgNjguOTY5MSA0OS4yOTRDNjkuMTQ5NyA0OS4zNzE2IDY5LjMwNjQgNDkuMjYyNyA2OS4zNzYgNDkuMTYyNUM2OS40NzY1IDQ5LjAxODQgNjkuNDQ4NCA0OC43OTQ5IDY5LjQ0NzkgNDguNjA4OUw2OS40NDc3IDQzLjcxNDFDNjkuNDQ3NyA0My40MTcyIDY5LjUwMTIgNDIuNzUyMSA2OS4zNDI5IDQyLjU4MTdDNjkuMjY4MyA0Mi41MDE1IDY4Ljc1NjUgNDIuMjg2OCA2OC43NTggNDMuMDI4OUM2OC43NTk3IDQzLjg0NTEgNjguNzU5MSA0NC42NjE1IDY4Ljc1OTEgNDUuNDc3NkM2OC43NTkxIDQ2LjMyNzEgNjguNzk3NyA0Ni45MTAzIDY4LjM2OTMgNDcuNTQyN0M2Ny40NTc5IDQ4Ljg4ODQgNjUuOTE1NiA0OC43NzU5IDY1LjEzMDkgNDcuODc1NUM2NC43MTMyIDQ3LjM5NiA2NC40ODg5IDQ2Ljg5NzMgNjQuNDg4MyA0Ni4wMTc1QzY0LjQ4NzYgNDUuMjAxNyA2NC40ODg1IDQ0LjM4NTkgNjQuNDg4NSA0My41NzAxQzY0LjQ4ODUgNDMuMjUwMSA2NC41NzQzIDQyLjY1NDcgNjQuMzIwOSA0Mi41MjkzQzY0LjE1ODMgNDIuNDQ4OCA2My45NDc3IDQyLjUwMzcgNjMuODc0NCA0Mi42MTZDNjMuNzgxNyA0Mi43NTggNjMuNzk4NSA0Mi45NTA4IDYzLjc5OTEgNDMuMTM3OUM2My44MDE2IDQzLjk1MzYgNjMuNzk5MyA0NC43Njk3IDYzLjc5OTMgNDUuNTg1NkM2My43OTkzIDQ3LjA1NzIgNjMuOTggNDguMDkxMiA2NS4zMDcxIDQ4Ljk1OEM2Ni42NjAxIDQ5Ljg0MTkgNjguMDY5NiA0OS4wMDA4IDY4Ljc0MzkgNDguMjYxMloiIGZpbGw9IiMxQTFBMUEiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik01Ny45NDUzIDQyLjgxODlDNTcuOTExNiA0Mi41ODYzIDU3LjY4NjEgNDIuMzg1NiA1Ny40MjY0IDQyLjUzNjNDNTcuMTU5MiA0Mi42OTE1IDU3LjI2MjUgNDMuNzk2NyA1Ny4yNjI1IDQ0LjE4Mkw1Ny4yNjI0IDQ4LjY0NDlDNTcuMjYxMiA0OC45NTA1IDU3LjI0MTcgNDkuMjExNiA1Ny40ODI0IDQ5LjI5ODRDNTguMzIyNyA0OS42MDExIDU3Ljc4NzUgNDcuMzI2MSA1Ny45NjY0IDQ2LjI4MjhMNjEuNTM5NyA0Ni4yODYxQzYxLjcyNTcgNDcuMzY2OCA2MS4xNzMxIDQ5LjY5IDYyLjA0ODggNDkuMjg2MUM2Mi4yODIgNDkuMTc4NSA2Mi4yNDMyIDQ4Ljg4MDEgNjIuMjQyNyA0OC41NzI5VjQ0LjExQzYyLjI0MjcgNDMuNzIyNCA2Mi4zNTIxIDQyLjY2IDYyLjA1NjMgNDIuNTI0N0M2MS43ODA0IDQyLjM5ODcgNjEuNTgwOSA0Mi41OTY5IDYxLjU1NjcgNDIuODUxMUw2MS41NTI0IDQ1LjUxMTFMNTcuOTU0NSA0NS41MDg1TDU3Ljk0NTMgNDIuODE4OVoiIGZpbGw9IiMxQTFBMUEiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik03Mi43NTMyIDQ1Ljg3MzZDNzIuODY5MyA0NS43MzEyIDczLjA1NDMgNDUuNjAyNSA3My4xOTQ3IDQ1LjQ1ODVMNzQuNTIxNSA0NC4xOTMyQzc0LjgyOTYgNDMuOTAyNCA3NS4wOTI4IDQzLjYyMzMgNzUuNDAyOSA0My4zNDc3Qzc1LjU0NjggNDMuMjE5OSA3NS43NDczIDQzLjExODEgNzUuNzI1NyA0Mi44MTg1Qzc1LjcwNzYgNDIuNTY4MSA3NS40OTAxIDQyLjQwMTYgNzUuMjM4OCA0Mi41MzM5Qzc1LjEzMzMgNDIuNTg5NSA3MS44MTE2IDQ1Ljc5NTEgNzEuNjgwNyA0NS44Njc3TDcxLjY4MDggNDMuMDI5NkM3MS42ODE1IDQyLjcyNDcgNzEuNjIyIDQyLjQ1NTMgNzEuMjc4NSA0Mi40OTkxQzcwLjk4NDQgNDIuNTM2NCA3MC45OSA0Mi44NTI4IDcwLjk5MTIgNDMuMTM3OUw3MC45OTA0IDQ4Ljc5MDRDNzAuOTkwNCA0OS4wNzU2IDcxLjA1OTIgNDkuMzUyNiA3MS4zNyA0OS4zMTYzQzcxLjY4MzEgNDkuMjc5OCA3MS42ODE3IDQ5LjAxNDMgNzEuNjgwMSA0OC42ODA5QzcxLjY3ODggNDguNDI1MyA3MS42MzI3IDQ2Ljk4ODEgNzEuNzIzMyA0Ni44NjRDNzEuNzQ4NSA0Ni44Mjk1IDcyLjE2MjggNDYuNDQxOCA3Mi4yMDY1IDQ2LjQxNTJMNzQuNjkyNSA0OC43ODU1Qzc1LjA0MzcgNDkuMTEwMyA3NS4zMzE1IDQ5LjUwNTEgNzUuNjI0NSA0OS4yMTk2Qzc2LjAyODQgNDguODI2MyA3NS4zNTY0IDQ4LjM3NzEgNzUuMjA0OCA0OC4yMzgxTDcyLjc1MzIgNDUuODczNloiIGZpbGw9IiMxQTFBMUEiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0zOC4zMjQzIDQ1Ljg3MzZDMzguNDI1NyA0NS42OSAzOC42MTk3IDQ1LjU5MzQgMzguNzY3NyA0NS40Mzc0QzM4LjkzODEgNDUuMjU3OCAzOS4wNDIgNDUuMTY2NCAzOS4yMTA1IDQ1LjAxNzJMNDAuOTg4OCA0My4zNDA1QzQxLjEzODcgNDMuMiA0MS4zMzIzIDQzLjEyMTggNDEuMjg5NiA0Mi43ODEzQzQxLjI1OTIgNDIuNTM4NSA0MS4wNDYgNDIuNDE0MiA0MC43OTQ0IDQyLjUzM0M0MC43NDczIDQyLjU1NTMgMzkuOTk3OSA0My4yNzEzIDM5Ljg5NjMgNDMuMzYzOEMzOS43NDAxIDQzLjUwNjEgMzkuNjE5OSA0My42NDI2IDM5LjQ1ODkgNDMuNzlDMzkuMjg5NSA0My45NDUyIDM5LjE5MjcgNDQuMDI3NiAzOS4wMTk3IDQ0LjIxMzZDMzguODk4NyA0NC4zNDM3IDM4LjcxODUgNDQuNTE2MSAzOC41ODM3IDQ0LjY0MkwzNy4yNTY3IDQ1Ljg2OTZDMzcuMjEyIDQ1LjI4OTMgMzcuMjQ5MSA0NC41NjIyIDM3LjI0OTEgNDMuOTY2QzM3LjI0OTEgNDMuMjEgMzcuMzkyIDQyLjQ2MzMgMzYuODY3NSA0Mi40OTczQzM2LjU0MzUgNDIuNTE4NCAzNi41NTgxIDQyLjgyMTggMzYuNTU5NyA0My4xMzgxTDM2LjU2IDQ3LjgxNzFDMzYuNTYgNDguNDEyNSAzNi40MjU1IDQ5LjM2NDggMzYuOTI3NyA0OS4zMTc0QzM3LjM3ODkgNDkuMjc0OCAzNy4yNDkxIDQ4LjQyMDQgMzcuMjQ5MSA0Ny43ODExQzM3LjI0OTEgNDYuNzIyNyAzNy4wODM5IDQ3LjA0MTQgMzcuNzYzNSA0Ni40MTU2TDQwLjI3MTUgNDguNzY0M0M0MC40MzA1IDQ4LjkzMzUgNDAuNTE3NiA0OS4wMTIxIDQwLjY3MiA0OS4xNTU3QzQxLjE4MjMgNDkuNjMwNCA0MS40OTAxIDQ4LjkzODUgNDEuMTY4NCA0OC42MjMzQzQwLjgyNjMgNDguMjg3OCAzOC40MTI1IDQ2LjA1MzEgMzguMzI0MyA0NS44NzM2WiIgZmlsbD0iIzFBMUExQSIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTQ1LjY3OTYgNDMuODE4N0M0NS44MTU2IDQzLjk4OTYgNDYuMjI2NSA0NS4wOTA4IDQ2LjM1NzEgNDUuNDEzN0w0Ny42NjE2IDQ4LjYwNzdDNDcuNzU1MyA0OC44MzQxIDQ3Ljg1MjkgNDkuMjUzNSA0OC4wNjkzIDQ5LjMyMjRDNDguNDIzMyA0OS40MzQ5IDQ4LjU5NzIgNDkuMDc5NiA0OC40NjQxIDQ4Ljc0MTdDNDcuNzM4MSA0Ni44OTg4IDQ2LjkyMjcgNDUuMDAxNyA0Ni4xNzY3IDQzLjE0NjVDNDYuMDgxOSA0Mi45MTA1IDQ2LjAxOTUgNDIuNTE0NSA0NS43MTM2IDQyLjQ5ODFDNDUuNDk4OCA0Mi40ODY1IDQ1LjQ0MzcgNDIuNTg0OCA0NS4zODgxIDQyLjczNzdDNDUuMTEyOCA0My40OTYxIDQ0LjU2NDggNDQuNzQxNyA0NC4yNDg4IDQ1LjUyMDdDNDMuODEyIDQ2LjU5NzIgNDMuMzYxMiA0Ny42NDQgNDIuOTM1NyA0OC43MDc1QzQyLjc5NjEgNDkuMDU2MSA0Mi45Mzg3IDQ5LjQ0NDggNDMuMzI2NSA0OS4zMTcxQzQzLjU1NzEgNDkuMjQxMSA0My42Mzg3IDQ4Ljg2NzMgNDMuNzQwOCA0OC42MTEzQzQ0LjM2NDEgNDcuMDUwNSA0NS4xMDY5IDQ1LjM0NzMgNDUuNjc5NiA0My44MTg3WiIgZmlsbD0iIzFBMUExQSIvPgo8L3N2Zz4K" alt="ARD Clinic" width="110" height="54"></a>
+    <nav id="nav">
+      <ul>
+        <li><a href="#news">Новости</a></li>
+        <li><a href="#services">Услуги</a></li>
+        <li><a href="#how">Как лечим</a></li>
+        <li><a href="#doctors">Врачи</a></li>
+        <li><a href="#book">Запись</a></li>
+      </ul>
+    </nav>
+    <a class="phone" href="tel:+78000000000">8 (800) 000-00-00</a>
+    <button class="burger" id="burger" aria-label="Меню">☰</button>
+  </div>
+</header>
+
+<main id="top">
+<div class="hero">
+  <div class="wrap">
+    <div>
+      <h1>Лёгкие ноги — <em>без боли</em> и без стационара</h1>
+      <p>Центр флебологии и лимфологии. Ультразвуковая диагностика, малоинвазивное лечение варикоза и индивидуальный план для каждого пациента.</p>
+      <div class="cta">
+        <a href="#book" class="btn btn-primary">Записаться на приём</a>
+        <a href="#services" class="btn btn-ghost">Наши услуги</a>
+      </div>
+      <div class="stats">
+        <div><b>УЗИ</b><span>ангиосканирование вен</span></div>
+        <div><b>1 день</b><span>без госпитализации</span></div>
+        <div><b>План</b><span>индивидуальный для вас</span></div>
+      </div>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <svg viewBox="0 0 400 400" fill="none">
+        <circle cx="200" cy="200" r="190" fill="rgba(255,255,255,.07)"/>
+        <circle cx="200" cy="200" r="130" fill="rgba(255,255,255,.07)"/>
+        <path d="M150 40c70 70-40 110 20 170s-10 100 50 150M250 40c-70 70 40 110-20 170s10 100-50 150" stroke="#7fe0d6" stroke-width="10" stroke-linecap="round"/>
+        <circle cx="170" cy="210" r="14" fill="#ef6f5e"/><circle cx="232" cy="130" r="9" fill="#ef6f5e"/>
+      </svg>
+    </div>
+  </div>
+</div>
+
+<section class="quick"><div class="wrap quick-grid">
+  <a href="#services"><div class="ic">🩺</div><h3>Приём флеболога</h3><p>Осмотр и УЗИ вен в один визит</p></a>
+  <a href="#services"><div class="ic">⚡</div><h3>Лазерная коагуляция</h3><p>Современное лечение варикоза</p></a>
+  <a href="#services"><div class="ic">💉</div><h3>Склеротерапия</h3><p>Сосудистые сетки и звёздочки</p></a>
+  <a href="#services"><div class="ic">💧</div><h3>Лимфостаз</h3><p>Диагностика и лечение отёков</p></a>
+</div></section>
+
+<section id="news"><div class="wrap">
+  <div class="news-head">
+    <div><h2>Новости флебологии</h2><p class="lead">Свежие материалы о здоровье вен, событиях клиники и профессиональных конференциях.</p></div>
+    <div class="chips" id="chips"></div>
+  </div>
+  <div class="news-grid" id="newsGrid"></div>
+</div></section>
+
+<section class="services" id="services"><div class="wrap">
+  <h2>Услуги центра</h2>
+  <p class="lead">От первичной диагностики до закрепления результата — всё в одном месте.</p>
+  <div class="svc-grid">
+    <div class="svc"><div class="n">01</div><h3>Консультация флеболога</h3><p>Осмотр, сбор анамнеза, ультразвуковое ангиосканирование и рекомендации.</p></div>
+    <div class="svc"><div class="n">02</div><h3>Лечение варикоза</h3><p>Подбор метода под вашу ситуацию: от компрессии до малоинвазивных процедур.</p></div>
+    <div class="svc"><div class="n">03</div><h3>Лазерная облитерация (ЭВЛО)</h3><p>Закрытие больной вены изнутри через прокол, без разрезов.</p></div>
+    <div class="svc"><div class="n">04</div><h3>Склеротерапия</h3><p>Введение препарата в вену, в том числе под контролем УЗИ.</p></div>
+    <div class="svc"><div class="n">05</div><h3>Сосудистые звёздочки</h3><p>Лазерное и инъекционное удаление сосудистых сеток.</p></div>
+    <div class="svc"><div class="n">06</div><h3>Лимфология</h3><p>Диагностика лимфостаза, подбор лечения и компрессионной терапии.</p></div>
+  </div>
+</div></section>
+
+<section id="how"><div class="wrap">
+  <h2>Как мы работаем</h2>
+  <div class="steps">
+    <div class="step"><h3>Осмотр</h3><p>Беседа и осмотр ног, уточнение жалоб.</p></div>
+    <div class="step"><h3>УЗИ вен</h3><p>Ангиосканирование показывает состояние клапанов и сосудов.</p></div>
+    <div class="step"><h3>План лечения</h3><p>Врач объясняет варианты и составляет индивидуальный план.</p></div>
+    <div class="step"><h3>Наблюдение</h3><p>Контрольные визиты и рекомендации по профилактике.</p></div>
+  </div>
+</div></section>
+
+<section id="doctors" style="padding-top:0"><div class="wrap">
+  <h2>Наши специалисты</h2>
+  <p class="lead">Демонстрационные карточки — замените на реальных врачей.</p>
+  <div class="docs">
+    <div class="doc"><div class="avatar">👨‍⚕️</div><h3>Имя Фамилия</h3><p>Флеболог, сосудистый хирург</p></div>
+    <div class="doc"><div class="avatar">👩‍⚕️</div><h3>Имя Фамилия</h3><p>Флеболог</p></div>
+    <div class="doc"><div class="avatar">👩‍⚕️</div><h3>Имя Фамилия</h3><p>Врач УЗИ-диагностики</p></div>
+    <div class="doc"><div class="avatar">👨‍⚕️</div><h3>Имя Фамилия</h3><p>Лимфолог</p></div>
+  </div>
+</div></section>
+
+<section id="book" style="padding-top:0"><div class="wrap">
+  <div class="book">
+    <div>
+      <h2>Запишитесь на приём</h2>
+      <p style="opacity:.85">Оставьте контакты — администратор перезвонит и подберёт удобное время.</p>
+    </div>
+    <form id="form">
+      <input name="name" placeholder="Ваше имя" required>
+      <input name="phone" type="tel" placeholder="Телефон" required>
+      <select name="service"><option>Приём флеболога</option><option>УЗИ вен</option><option>Склеротерапия</option><option>Лимфология</option></select>
+      <button class="btn btn-primary" type="submit">Отправить заявку</button>
+      <div class="ok" id="ok">Спасибо! Это демо-форма: данные никуда не отправляются.</div>
+      <div class="note">Демонстрационная форма. Нажимая кнопку, вы соглашаетесь с обработкой данных.</div>
+    </form>
+  </div>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+  <div class="fgrid">
+    <div><h4>ARD Clinic</h4><p>Центр флебологии и лимфологии. Заботимся о здоровье ваших вен.</p></div>
+    <div><h4>Разделы</h4><ul><li><a href="#news">Новости</a></li><li><a href="#services">Услуги</a></li><li><a href="#doctors">Врачи</a></li></ul></div>
+    <div><h4>Контакты</h4><ul><li>8 (800) 000-00-00</li><li>info@example.com</li><li>Пн–Пт 9:00–20:00, Сб 9:00–15:00</li></ul></div>
+  </div>
+  <div class="disc">Демонстрационный макет. Названия, контакты и новости — образцы. Материалы носят справочный характер и не заменяют консультацию врача; есть противопоказания, необходима консультация специалиста.</div>
+</div></footer>
+
+<script>
+const NEWS=[
+ {t:"Клиника",d:"2026-10-10",h:"Открыт набор на школу здоровых вен для пациентов",p:"Бесплатные лекции врачей о профилактике варикоза, выборе компрессионного трикотажа и режиме нагрузок.",e:"🎓",c:"#cfeeea"},
+ {t:"Профилактика",d:"2026-10-06",h:"Пять привычек, которые разгружают вены на работе",p:"Разминка для голеней, смена позы каждый час и достаточное количество воды — простые советы для сидячей работы.",e:"🚶",c:"#fde2dc"},
+ {t:"Технологии",d:"2026-09-29",h:"Лазерная облитерация: как проходит процедура",p:"Рассказываем по шагам: подготовка, ход вмешательства под УЗИ-контролем и период восстановления.",e:"⚡",c:"#dbe9fb"},
+ {t:"Конференции",d:"2026-09-21",h:"Флебологи региона обсудили новые рекомендации по лечению варикоза",p:"Краткий обзор докладов профессионального форума: диагностика, малоинвазивные методики и наблюдение пациентов.",e:"🎤",c:"#efe6fb"},
+ {t:"Лимфология",d:"2026-09-12",h:"Отёки ног: когда причина в лимфатической системе",p:"Чем лимфостаз отличается от венозных отёков и почему важно пройти обследование.",e:"💧",c:"#d9f2f7"},
+ {t:"Профилактика",d:"2026-09-03",h:"Как выбрать компрессионный трикотаж",p:"Класс компрессии, размер и ношение — что учитывает врач при подборе.",e:"🧦",c:"#fff0cf"},
+ {t:"Клиника",d:"2026-08-25",h:"Расширили часы приёма в субботу",p:"Теперь записаться к флебологу и на УЗИ вен можно и на выходной день.",e:"🕘",c:"#d8f3e4"}
+];
+const fmt=s=>new Date(s).toLocaleDateString('ru-RU',{day:'numeric',month:'long',year:'numeric'});
+const tm=document.getElementById('tickerMove');
+const items=NEWS.map(n=>`<a href="#news"><b>${fmt(n.d).replace(/ г\.?$/,'')}</b>${n.h}</a>`).join('');
+tm.innerHTML=items+items;
+const grid=document.getElementById('newsGrid'),chips=document.getElementById('chips');
+const tags=['Все',...new Set(NEWS.map(n=>n.t))];
+let cur='Все';
+function render(){
+  const list=NEWS.filter(n=>cur==='Все'||n.t===cur);
+  grid.innerHTML=list.map((n,i)=>`<article class="card ${i===0&&cur==='Все'?'big':''}">
+    <div class="pic" style="background:${n.c}">${n.e}</div>
+    <div class="body"><span class="tag">${n.t}</span><h3>${n.h}</h3><p>${n.p}</p><span class="date">${fmt(n.d)}</span></div></article>`).join('');
+  chips.innerHTML=tags.map(t=>`<button class="chip ${t===cur?'on':''}" data-t="${t}">${t}</button>`).join('');
+}
+chips.addEventListener('click',e=>{const t=e.target.dataset.t;if(t){cur=t;render()}});
+render();
+document.getElementById('burger').onclick=()=>document.getElementById('nav').classList.toggle('open');
+document.querySelectorAll('nav a').forEach(a=>a.onclick=()=>document.getElementById('nav').classList.remove('open'));
+document.getElementById('form').onsubmit=e=>{e.preventDefault();document.getElementById('ok').style.display='block';e.target.reset()};
+</script>
+</body>
+</html>
