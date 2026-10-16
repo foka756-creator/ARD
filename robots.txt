@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://foka756-creator.github.io/ARD/sitemap.xml
