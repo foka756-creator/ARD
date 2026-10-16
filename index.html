@@ -34,7 +34,7 @@
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:Manrope,system-ui,sans-serif;background:#fff url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%201600%20900%22%20preserveAspectRatio%3D%22xMidYMid%20slice%22%20fill%3D%22none%22%20stroke%3D%22%230e8a8a%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20opacity%3D%220.28%22%3E%3Cpath%20d%3D%22M0%200L680%20360H920L1600%200M0%20900L680%20520H920L1600%20900M680%20360V520M920%20360V520M0%200V900M1600%200V900M27%20136L177%20193L177%20646L27%20693ZM77%20155V677M127%20174V661M218%20208L326%20249L326%20598L218%20632ZM254%20222V621M290%20235V609M367%20264L442%20293L442%20561L367%20585ZM405%20279V573M476%20305L530%20326L530%20533L476%20550ZM503%20316V541M0%20810V900M204%20718V786M340%20657V710M449%20608V649M544%20565V596M680%20504V520M1573%20136L1423%20193L1423%20646L1573%20693ZM1523%20155V677M1473%20174V661M1382%20208L1274%20249L1274%20598L1382%20632ZM1346%20222V621M1310%20235V609M1233%20264L1158%20293L1158%20561L1233%20585ZM1195%20279V573M1124%20305L1070%20326L1070%20533L1124%20550ZM1097%20316V541M1600%20810V900M1396%20718V786M1260%20657V710M1151%20608V649M1056%20565V596M920%20504V520M360%200L734%20360M640%200L776%20360M960%200L824%20360M1240%200L866%20360M232%2072H1368M344%20144H1256M428%20198H1172M501%20245H1099M200%20900L710%20520M520%20900L758%20520M800%20900L800%20520M1080%20900L842%20520M1400%20900L890%20520M102%20843H1498M204%20786H1396M340%20710H1260M476%20634H1124M800%20440m-62%200a62%2062%200%201%200%20124%200a62%2062%200%201%200-124%200M800%20440m-40%200a40%2040%200%201%200%2080%200a40%2040%200%201%200-80%200M740%20506H870V520M730%20502H880M700%20520V400M900%20520V400M790%20368V388M780%20378H800M250%200V120L330%20170M250%20120h-20M330%20170M180%20140H340V240H180ZM194%20154H326V226H194ZM205%20210l22-30%2020%2018%2025-38%2022%2026%2018-14%2020%2024M1260%20900V700M1420%20900V700M1240%20700H1440V640H1240ZM1280%20640V540H1400V640M1292%20552H1388V628H1292ZM1300%20590l20-20%2020%2024%2024-30%2020%2018M1240%20700H1180L1150%20760M1150%20760a14%2014%200%201%200%2028%200M1240%20880a18%2018%200%201%200%2036%200M1410%20880a18%2018%200%201%200%2036%200M80%20900V560M40%20900H120M80%20560H20M20%20560V600M80%20560h60M140%20560v40M800%200V70M730%2070H870L850%20100H750Z%20M770%2085h60M92%20200a8%208%200%201%200%2016%200a8%208%200%201%200-16%200M1492%20200a8%208%200%201%200%2016%200a8%208%200%201%200-16%200M512%20320a8%208%200%201%200%2016%200a8%208%200%201%200-16%200M1072%20320a8%208%200%201%200%2016%200a8%208%200%201%200-16%200%22/%3E%3C/svg%3E") center bottom/cover fixed no-repeat;color:var(--ink);line-height:1.6}
+body{font-family:Manrope,system-ui,sans-serif;background:#fff;color:var(--ink);line-height:1.6}
 a{color:inherit;text-decoration:none}
 .wrap{max-width:1180px;margin:0 auto;padding:0 20px}
 h1,h2,h3{font-family:'Playfair Display',Georgia,serif;line-height:1.15}
@@ -78,7 +78,7 @@ nav ul{display:flex;gap:28px;list-style:none;font-weight:500;font-size:15px}
 }
 
 /* hero */
-.hero{background:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%201600%20900%22%20preserveAspectRatio%3D%22xMidYMid%20slice%22%20fill%3D%22none%22%20stroke%3D%22%23ffffff%22%20stroke-width%3D%221.8%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20opacity%3D%220.22%22%3E%3Cpath%20d%3D%22M0%200L680%20360H920L1600%200M0%20900L680%20520H920L1600%20900M680%20360V520M920%20360V520M0%200V900M1600%200V900M27%20136L177%20193L177%20646L27%20693ZM77%20155V677M127%20174V661M218%20208L326%20249L326%20598L218%20632ZM254%20222V621M290%20235V609M367%20264L442%20293L442%20561L367%20585ZM405%20279V573M476%20305L530%20326L530%20533L476%20550ZM503%20316V541M0%20810V900M204%20718V786M340%20657V710M449%20608V649M544%20565V596M680%20504V520M1573%20136L1423%20193L1423%20646L1573%20693ZM1523%20155V677M1473%20174V661M1382%20208L1274%20249L1274%20598L1382%20632ZM1346%20222V621M1310%20235V609M1233%20264L1158%20293L1158%20561L1233%20585ZM1195%20279V573M1124%20305L1070%20326L1070%20533L1124%20550ZM1097%20316V541M1600%20810V900M1396%20718V786M1260%20657V710M1151%20608V649M1056%20565V596M920%20504V520M360%200L734%20360M640%200L776%20360M960%200L824%20360M1240%200L866%20360M232%2072H1368M344%20144H1256M428%20198H1172M501%20245H1099M200%20900L710%20520M520%20900L758%20520M800%20900L800%20520M1080%20900L842%20520M1400%20900L890%20520M102%20843H1498M204%20786H1396M340%20710H1260M476%20634H1124M800%20440m-62%200a62%2062%200%201%200%20124%200a62%2062%200%201%200-124%200M800%20440m-40%200a40%2040%200%201%200%2080%200a40%2040%200%201%200-80%200M740%20506H870V520M730%20502H880M700%20520V400M900%20520V400M790%20368V388M780%20378H800M250%200V120L330%20170M250%20120h-20M330%20170M180%20140H340V240H180ZM194%20154H326V226H194ZM205%20210l22-30%2020%2018%2025-38%2022%2026%2018-14%2020%2024M1260%20900V700M1420%20900V700M1240%20700H1440V640H1240ZM1280%20640V540H1400V640M1292%20552H1388V628H1292ZM1300%20590l20-20%2020%2024%2024-30%2020%2018M1240%20700H1180L1150%20760M1150%20760a14%2014%200%201%200%2028%200M1240%20880a18%2018%200%201%200%2036%200M1410%20880a18%2018%200%201%200%2036%200M80%20900V560M40%20900H120M80%20560H20M20%20560V600M80%20560h60M140%20560v40M800%200V70M730%2070H870L850%20100H750Z%20M770%2085h60M92%20200a8%208%200%201%200%2016%200a8%208%200%201%200-16%200M1492%20200a8%208%200%201%200%2016%200a8%208%200%201%200-16%200M512%20320a8%208%200%201%200%2016%200a8%208%200%201%200-16%200M1072%20320a8%208%200%201%200%2016%200a8%208%200%201%200-16%200%22/%3E%3C/svg%3E") center bottom/cover no-repeat,radial-gradient(1200px 500px at 85% -10%,#5fe3d6 0%,transparent 60%),linear-gradient(135deg,#0a8f8f,#19b8ad);color:#fff;padding:90px 0 120px;position:relative;overflow:hidden}
+.hero{background:radial-gradient(1200px 500px at 85% -10%,#5fe3d6 0%,transparent 60%),linear-gradient(135deg,#0a8f8f,#19b8ad);color:#fff;padding:90px 0 120px;position:relative;overflow:hidden}
 .hero .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}
 .hero h1{font-size:clamp(36px,5.5vw,64px);margin-bottom:20px}
 .hero h1 em{font-style:italic;color:#fff}
@@ -162,6 +162,28 @@ footer li{list-style:none;margin-bottom:6px}
 .disc{border-top:1px solid rgba(255,255,255,.3);margin-top:30px;padding-top:20px;font-size:12px;opacity:.7}
 @media(max-width:700px){.fgrid{grid-template-columns:1fr}}
 
+
+/* dynamic background */
+.bg{position:fixed;inset:-24px;z-index:-1;pointer-events:none;color:var(--teal);opacity:.3;will-change:transform;transition:transform .4s ease-out}
+.bg svg,.hero-bg svg{width:100%;height:100%;display:block}
+.hero-bg{position:absolute;inset:-24px;z-index:0;pointer-events:none;color:#fff;opacity:.26;transition:transform .4s ease-out}
+.hero .wrap{position:relative;z-index:1}
+.bg-breathe{transform-origin:800px 430px;animation:breathe 14s ease-in-out infinite alternate}
+@keyframes breathe{to{transform:scale(1.05)}}
+.bg-flow{stroke-dasharray:46 90;animation:bgflow 3.4s linear infinite;stroke-width:3.2}
+@keyframes bgflow{to{stroke-dashoffset:-136}}
+.bg-ring{transform-box:fill-box;transform-origin:center;animation:ring 3.2s ease-out infinite}
+.bg-ring.r2{animation-delay:1.6s}
+@keyframes ring{0%{transform:scale(.8);opacity:1}100%{transform:scale(2.1);opacity:0}}
+.bg-ekg{stroke-dasharray:160 160;animation:ekg 2.6s linear infinite;stroke-width:3}
+@keyframes ekg{from{stroke-dashoffset:320}to{stroke-dashoffset:0}}
+.bg-scan{animation:scan 6s ease-in-out infinite alternate;stroke-width:3}
+@keyframes scan{from{transform:translateX(0)}to{transform:translateX(220px)}}
+.bg-dots circle{fill:currentColor;animation:blink 2.4s ease-in-out infinite}
+.bg-dots circle:nth-child(2){animation-delay:.6s}.bg-dots circle:nth-child(3){animation-delay:1.2s}.bg-dots circle:nth-child(4){animation-delay:1.8s}.bg-dots circle:nth-child(5){animation-delay:.3s}.bg-dots circle:nth-child(6){animation-delay:1.5s}
+@keyframes blink{50%{opacity:.1}}
+@media (prefers-reduced-motion:reduce){.bg-breathe,.bg-flow,.bg-ring,.bg-ekg,.bg-scan,.bg-dots circle{animation:none}}
+
 /* hover: red cross */
 .vein{pointer-events:stroke;transition:stroke .25s}
 .vein:hover{stroke-dasharray:6 16;animation:flow .7s linear infinite}
@@ -187,6 +209,17 @@ footer a:hover{color:#fff}
 </style>
 </head>
 <body>
+<template id="bgTpl"><svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<g class="bg-breathe"><path class="bg-shell" d="M0 0L680 360H920L1600 0M0 900L680 520H920L1600 900M680 360V520M920 360V520M0 0V900M1600 0V900M27 136L177 193L177 646L27 693ZM77 155V677M127 174V661M218 208L326 249L326 598L218 632ZM254 222V621M290 235V609M367 264L442 293L442 561L367 585ZM405 279V573M476 305L530 326L530 533L476 550ZM503 316V541M0 810V900M204 718V786M340 657V710M449 608V649M544 565V596M680 504V520M1573 136L1423 193L1423 646L1573 693ZM1523 155V677M1473 174V661M1382 208L1274 249L1274 598L1382 632ZM1346 222V621M1310 235V609M1233 264L1158 293L1158 561L1233 585ZM1195 279V573M1124 305L1070 326L1070 533L1124 550ZM1097 316V541M1600 810V900M1396 718V786M1260 657V710M1151 608V649M1056 565V596M920 504V520M232 72H1368M344 144H1256M428 198H1172M501 245H1099M102 843H1498M204 786H1396M340 710H1260M476 634H1124M700 520V400M900 520V400M790 368V388M780 378H800"/>
+<path class="bg-flow" d="M360 0L734 360M640 0L776 360M960 0L824 360M1240 0L866 360M200 900L710 520M520 900L758 520M800 900L800 520M1080 900L842 520M1400 900L890 520M0 315L680 416M0 540L680 456M1600 315L920 416M1600 540L920 456"/>
+<path class="bg-equip" d="M250 0V120L330 170M180 140H340V240H180ZM194 154H326V226H194ZM1260 900V700M1420 900V700M1240 700H1440V640H1240ZM1280 640V540H1400V640M1292 552H1388V628H1292ZM1240 700H1180L1150 760M1150 760a14 14 0 1 0 28 0M1240 880a18 18 0 1 0 36 0M1410 880a18 18 0 1 0 36 0M80 900V560M40 900H120M80 560H20M20 560V600M80 560h60M140 560v40M800 0V70M730 70H870L850 100H750Z M770 85h60M740 506H870V520M730 502H880"/>
+<g class="bg-gantry"><circle cx="800" cy="440" r="62"/><circle class="bg-ring" cx="800" cy="440" r="40"/><circle class="bg-ring r2" cx="800" cy="440" r="40"/></g>
+<path class="bg-ekg" d="M730 450h24l8-20 14 40 10-30 8 10h36"/>
+<path class="bg-scan" d="M690 365V515"/>
+<g class="bg-dots"><circle cx="100" cy="200" r="7"/><circle cx="1500" cy="200" r="7"/><circle cx="520" cy="320" r="7"/><circle cx="1080" cy="320" r="7"/><circle cx="330" cy="190" r="4"/><circle cx="1260" cy="520" r="4"/></g>
+</g></svg></template>
+<div class="bg" id="bg" aria-hidden="true"></div>
+
 
 <div class="ticker" aria-label="Новости флебологии">
   <div class="ticker-label"><i></i>Новости</div>
@@ -344,6 +377,21 @@ render();
 document.getElementById('burger').onclick=()=>document.getElementById('nav').classList.toggle('open');
 document.querySelectorAll('nav a').forEach(a=>a.onclick=()=>document.getElementById('nav').classList.remove('open'));
 document.getElementById('form').onsubmit=e=>{e.preventDefault();document.getElementById('ok').style.display='block';e.target.reset()};
+
+(function(){
+  var tpl=document.getElementById('bgTpl'),bg=document.getElementById('bg'),hero=document.querySelector('.hero');
+  bg.appendChild(tpl.content.cloneNode(true));
+  var hb=document.createElement('div');hb.className='hero-bg';hb.setAttribute('aria-hidden','true');
+  hb.appendChild(tpl.content.cloneNode(true));hero.insertBefore(hb,hero.firstChild);
+  if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+  var mx=0,my=0,sy=0,raf=0;
+  function apply(){raf=0;
+    var t='translate('+(mx*-14).toFixed(1)+'px,'+((my*-10)+sy*-0.03).toFixed(1)+'px)';
+    bg.style.transform=t;hb.style.transform='translate('+(mx*-14).toFixed(1)+'px,'+(my*-10).toFixed(1)+'px)';}
+  function q(){if(!raf)raf=requestAnimationFrame(apply)}
+  addEventListener('pointermove',function(e){mx=e.clientX/innerWidth-.5;my=e.clientY/innerHeight-.5;q()},{passive:true});
+  addEventListener('scroll',function(){sy=Math.min(scrollY,2000);q()},{passive:true});
+})();
 </script>
 </body>
 </html>
